@@ -28,18 +28,18 @@ def plot_bode(tf):
 
     fig.show()
 
-    plot(fig, filename='Ej_8_tf.html', auto_open=False)
+    plot(fig, filename='5_21_tf.html', auto_open=False)
 
 Q = 2.22
-k = math.sqrt(10) / (Q ** 3)
+k = 1 / 9
 
 a = 4
 b = 3.95
 c = 4.95
 d = 1.96
 
-num = [k, 0, 0, 0]
-den = [1, 2 / Q, 3 + 2 / (Q ** 2), (4 / Q) + (1 / Q ** 3), 3 + (2 / Q ** 2), 2 / Q, 1]
+num = [1, 0, k, 0]
+den = [1, 2, 2, 1]
 
 tf = sig.TransferFunction(num, den)
 
